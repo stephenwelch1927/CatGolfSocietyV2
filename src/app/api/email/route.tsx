@@ -6,23 +6,21 @@ import Mail from 'nodemailer/lib/mailer';
 export  async function POST(request: NextRequest) {
     try {
     const  { email, name, message } = await request.json();
-    const EMAIL ="stephenwelch1927@gmail.com";
-    const PASSWORD="zuzyathndgkvxjdb";
-
+ 
     const transport = nodemailer.createTransport({
         service: "gmail",
         headers: {
           'Content-Type' : 'application/json',   
         },
       auth: {
-        user: EMAIL,
-        pass: PASSWORD,
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
       },
     });
   
     const mailOptions: Mail.Options = {
-      from: EMAIL,
-      to: EMAIL,
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
       // cc: email, (uncomment this line if you want to send a copy to the sender)
       subject: `Message from ${name} (${email})`,
       text: message,
