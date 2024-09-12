@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 
-export default async function Home() {
+export default async function Page() {
   async function getCourses () {
     try{
     let response = await fetch('https://use.livegolfapi.com/v1/events?api_key=70031466771a43d2b66c98288ba31e52');

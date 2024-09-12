@@ -19,7 +19,7 @@ const Navbar = () => {
             size={30}
             className="flex fill-white float-right ml-10 mt-4"
           />
-          <Link href="/form">
+          <Link href="/contact">
           <p className="text-white py-5 ml-1">Contact Form</p>
           </Link>
           </div>
@@ -27,11 +27,13 @@ const Navbar = () => {
           <SignedOut>
         <SignInButton />
       </SignedOut>
-      <SignedIn>
+      <SignedIn className="h-3 w-4">
         <UserButton></UserButton>
       </SignedIn>
       </div>
+  
         </div>
+        
       </header>
       <nav className="relative w-full h-25 bg-gray-200">
         <div className="flex items-center h-full w-full px-4 2xl:px-16 text-center sm:text-left">
